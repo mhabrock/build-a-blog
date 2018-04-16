@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+
+
+<link type="text/css" rel="stylesheet" href="static\styles\style.css"/>
+    <head>
+        <title>{{pagetitle}}</title>
+    </head>
+    <body>
+    	
+        <a href="/blog">Main Blog Page</a> 
+        <a href="/newpost">Add a Blog Entry</a>
+            {% block content %}
+            {% endblock %}
+        
+            {% with messages = get_flashed_messages() %}
+                <ul>
+                    {% for message in messages %}
+                        <li>{{ message }}</li>
+                    {% endfor %}
+                </ul>
+            {% endwith %}
+
+    </body>
+</html>
